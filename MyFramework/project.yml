@@ -1,0 +1,19 @@
+name: MyFramework
+options:
+  bundleIdPrefix: com.myapp.MyFramework
+packages:
+  PureLayout:
+    url: https://github.com/PureLayout/PureLayout.git
+    version: 3.1.6
+targets:
+  MyFramework:
+    type: framework
+    platform: iOS
+    deploymentTarget: "12.2"
+    sources: 
+      - Sources
+    dependencies:
+      - package: PureLayout
+    postBuildScripts:
+      - path: ../Scripts/copy-product_ios.sh
+        name: Copy Product

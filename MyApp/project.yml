@@ -1,0 +1,22 @@
+name: MyProject
+options:
+  bundleIdPrefix: com.myapp
+packages:
+  PureLayout:
+    url: https://github.com/PureLayout/PureLayout.git
+    version: 3.1.6
+targets:
+  MyApp:
+    type: application
+    platform: iOS
+    deploymentTarget: "12.2"
+    sources: [Sources]
+    settings:
+      configs:
+        debug:
+          APPLICATION_EXTENSION_API_ONLY: 'YES'
+        release:
+          APPLICATION_EXTENSION_API_ONLY: 'YES'
+    dependencies:
+      - framework: ../Builds/MyFramework.framework
+      - package: PureLayout
